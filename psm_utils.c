@@ -667,13 +667,13 @@ psmi_parse_mpool_env(const psm2_mq_t mq, int level,
 	if (val < rlim->minval || val > rlim->maxval) {
 		err = psmi_handle_error(NULL, PSM2_PARAM_ERR,
 					"Env. var %s=%u is invalid (valid settings in mode PSM2_MEMORY=%s"
-					" are inclusively between %u and %u)",
+					" are inclusively between %lu and %lu)",
 					env, val, psmi_memmode_string(mode),
 					rlim->minval, rlim->maxval);
 		goto fail;
 	}
 
-	_HFI_VDBG("%s max=%u,chunk=%u (mode=%s(%u),min=%u,max=%u)\n",
+	_HFI_VDBG("%s max=%u,chunk=%u (mode=%s(%u),min=%lu,max=%lu)\n",
 		  env, val, rlim->mode[mode].obj_chunk,
 		  psmi_memmode_string(mode), mode, rlim->minval, rlim->maxval);
 

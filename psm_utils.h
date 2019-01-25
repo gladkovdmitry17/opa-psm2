@@ -229,8 +229,8 @@ struct psmi_rlimit_mpool {
 	const char *env;
 	const char *descr;
 	int env_level;
-	uint32_t minval;
-	uint32_t maxval;
+	uint64_t minval;
+	uint64_t maxval;
 	struct {
 		uint32_t obj_chunk;
 		uint32_t obj_max;
